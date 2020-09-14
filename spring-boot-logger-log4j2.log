@@ -1,0 +1,24 @@
+16:17:45.031 [main] INFO  application.App - Starting App on DESKTOP-1OH06KS with PID 11404 (C:\Users\Abhinav\Documents\GitHub\SpringBootCrudOperations\target\classes started by Abhinav in C:\Users\Abhinav\Documents\GitHub\SpringBootCrudOperations)
+16:17:45.048 [main] INFO  application.App - No active profile set, falling back to default profiles: default
+16:17:47.502 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c014c159] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:17:48.675 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:17:48.991 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3862 ms
+16:17:50.014 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+16:17:50.210 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.7.Final}
+16:17:50.213 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+16:17:50.548 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+16:17:50.858 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+16:17:52.220 [main] INFO  org.hibernate.tool.schema.internal.SchemaCreatorImpl - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@cc9ef8d'
+16:17:52.225 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:17:53.421 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:17:53.535 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:17:54.059 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:17:54.064 [main] INFO  application.App - Started App in 9.652 seconds (JVM running for 11.132)
+16:17:58.112 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:17:58.132 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 20 ms
+16:17:58.379 [http-nio-8080-exec-1] INFO  application.controller.BookController - Hello from Log4j 2 - num : Spring
+16:17:58.380 [http-nio-8080-exec-1] ERROR application.controller.BookController - Hello from Log4j 2 - num : Spring
+16:17:58.380 [http-nio-8080-exec-1] FATAL application.controller.BookController - Hello from Log4j 2 - num : Spring
+16:17:58.381 [http-nio-8080-exec-1] WARN  application.controller.BookController - Hello from Log4j 2 - num : Spring

@@ -1,0 +1,5 @@
+[INFO ] 2020-09-12 20:18:22.445 [http-nio-8080-exec-6] BookController - Hello info from Log4j 2 - num : Spring
+[ERROR] 2020-09-12 20:18:22.446 [http-nio-8080-exec-6] BookController - Hello error from Log4j 2 - num : Spring
+[FATAL] 2020-09-12 20:18:22.446 [http-nio-8080-exec-6] BookController - Hello fatal from Log4j 2 - num : Spring
+[DEBUG] 2020-09-12 20:18:22.446 [http-nio-8080-exec-6] BookController - Hello debug from Log4j 2 - num : Spring
+[WARN ] 2020-09-12 20:18:22.446 [http-nio-8080-exec-6] BookController - Hello warn from Log4j 2 - num : Spring
