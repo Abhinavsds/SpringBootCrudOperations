@@ -1,7 +1,6 @@
 package application.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,22 +15,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import application.Entity.Book;
-import application.Repository.BookRepository;
-import application.Service.BookService;
+import application.Entity.BookMongo;
+import application.Repository.BookRepositoryMongo;
+import application.Service.BookServiceMongo;
 
 @RestController
-public class BookController {
+@RequestMapping("mongo")
+public class BookControllerMongo {
 
-	private static final Logger logger = LogManager.getLogger(BookController.class);
+	private static final Logger logger = LogManager.getLogger(BookControllerMongo.class);
 	@Autowired
-	BookService bookService;
+	BookServiceMongo bookService;
 
 	@Autowired
-	BookRepository bookrepo;
+	BookRepositoryMongo bookrepo;
 
 	// add book in library
 	@RequestMapping(value = "/save")
-	private void saveBook(@RequestBody Book book) {
+	private void saveBook(@RequestBody BookMongo book) {
 
 		logger.info("Hello info from Log4j 2 - num : {}", () -> book.getTitle());
 		logger.error("Hello error from Log4j 2 - num : {}", () -> book.getTitle());
@@ -42,43 +43,12 @@ public class BookController {
 		bookService.addBook(book);
 	}
 
-	@PutMapping("/book/{title}")
-	public ResponseEntity<Book> updateEmployee(@PathVariable(value = "title") String title,
-			@RequestBody Book BookDetails) {
-		Book book = bookrepo.findByTitle(title);
-
-		book.setAuthor(BookDetails.getAuthor());
-		book.setPrice(BookDetails.getPrice());
-		final Book updatedBook = bookrepo.save(book);
-		return ResponseEntity.ok(updatedBook);
-	}
-
 	// fetch book by title
-	@RequestMapping(value = "/fetchByTitle/{title}")
-	private Book fetchByTitle(@PathVariable String title) {
-		return bookService.findByTitle(title);
-	}
-
-	@RequestMapping(value = "/pro/{Id}")
-	private void procedureResponse(@PathVariable int Id) {
-		System.out.println(bookrepo.getTotalCarsByModel(Id));
-	}
-
-	@RequestMapping(value = "/excel/{Id}")
-	private void toExcel(@PathVariable int Id) {
-		System.out.println(bookrepo.getDataById(Id));
-	}
 
 	// fetch all books
 	@RequestMapping(value = "/fetchAll")
-	private List<Book> fetchAll() {
+	private List<BookMongo> fetchAll() {
 		return bookService.findAllBooks();
-	}
-
-	// fetch all books
-	@GetMapping(value = "/fetchbyQuery/{author}")
-	private List<Book> fetchbyQuery(@PathVariable String author) {
-		return bookrepo.findByAuthor(author);
 	}
 
 	// Delete All books

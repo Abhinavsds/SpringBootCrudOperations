@@ -21,6 +21,9 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
 	@Procedure("firstPro")
 	String getTotalCarsByModel(int model);
 	
+	@Procedure("exportToExcel")
+	Book getDataById(int id);
+	
 //	@Query(value="Select * FROM book where author= ?1",nativeQuery = true)  for native query
 	@Query("Select bk FROM book bk where author= ?1")   //using jpl query but for thtis we have to name entity aloso as book.
 	List<Book> findByAuthor(String author); 
